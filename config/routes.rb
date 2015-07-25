@@ -1,4 +1,22 @@
 Rails.application.routes.draw do
+  get 'users/mine'
+
+  get 'users/mine'
+
+  get 'users/login'
+
+  get 'users/profile'
+
+  get 'users/join'
+
+  get 'cards/new'
+
+  get 'tasks/index'
+
+  get 'tasks/new'
+
+  get 'tasks/jump'
+
   get 'tasks/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
