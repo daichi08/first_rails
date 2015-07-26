@@ -1,10 +1,4 @@
 class TasksController < ApplicationController
-  def index
-  end
-
-  def new
-  end
-
-  def jump
+  def notice
   end
 end

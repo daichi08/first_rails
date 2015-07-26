@@ -1,4 +1,40 @@
 Rails.application.routes.draw do
+  get 'users/profile'
+
+  get 'users/login'
+
+  get 'tasks/notice'
+
+  get 'users/login'
+
+  get 'users/profile'
+
+  get 'toppage/top'
+
+  get 'tasks/join'
+
+  get 'tasks/mine'
+
+  get 'users/login'
+
+  get 'users/profile'
+
+  get 'users/toppage'
+
+  get 'users/mine'
+
+  get 'users/join'
+
+  get 'tasks/index'
+
+  get 'tasks/new'
+
+  get 'users/login'
+
+  get 'users/profile'
+
+  get 'users/join'
+
   get 'users/mine'
 
   get 'users/mine'
@@ -7,15 +43,11 @@ Rails.application.routes.draw do
 
   get 'users/profile'
 
-  get 'users/join'
-
   get 'cards/new'
 
   get 'tasks/index'
 
   get 'tasks/new'
-
-  get 'tasks/jump'
 
   get 'tasks/index'
 

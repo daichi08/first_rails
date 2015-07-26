@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
-  def mine
+  def profile
+  end
+
+  def login
   end
 end
