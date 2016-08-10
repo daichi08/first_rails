@@ -1,9 +1,7 @@
 require 'test_helper'
 
 class TasksControllerTest < ActionController::TestCase
-  test "should get notice" do
-    get :notice
-    assert_response :success
-  end
-
+  # test "the truth" do
+  #   assert true
+  # end
 end
