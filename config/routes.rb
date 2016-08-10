@@ -1,56 +1,44 @@
 Rails.application.routes.draw do
-  get 'users/profile'
+  
+  resources :projects do
+    resources :tasks, only: [:create, :destroy]
+  end
 
-  get 'users/login'
+  post '/projects/:project_id/tasks/:id/toggle' => 'tasks#toggle'
 
-  get 'tasks/notice'
+  get 'projects/index'
 
-  get 'users/login'
+  get 'projects/new'
 
-  get 'users/profile'
+  get 'projects/show'
 
-  get 'toppage/top'
+  get 'projects/create'
 
-  get 'tasks/join'
+  get 'projects/edit'
 
-  get 'tasks/mine'
+  get 'projects/update'
 
-  get 'users/login'
+  get 'projects/destroy'
 
-  get 'users/profile'
-
-  get 'users/toppage'
-
-  get 'users/mine'
-
-  get 'users/join'
-
-  get 'tasks/index'
-
-  get 'tasks/new'
-
-  get 'users/login'
+  authenticated :user do
+    get 'pages/show' => 'projects#index'
+  end
 
   get 'users/profile'
 
-  get 'users/join'
+  get 'pages/_mylist'
+  get 'pages/_favlist'
+  get 'pages/_summary'
+  get 'pages/logout'
 
-  get 'users/mine'
-
-  get 'users/mine'
-
-  get 'users/login'
-
-  get 'users/profile'
-
-  get 'cards/new'
-
-  get 'tasks/index'
-
-  get 'tasks/new'
-
-  get 'tasks/index'
-
+  root 'pages#index'
+  get 'pages/show'
+  get 'pages/index'
+  
+  devise_for :users, path_names: { sign_in: "login", sign_out: "logout"} ,controllers: {
+    omniauth_callbacks: "omniauth_callbacks",
+    registrations:'users/registrations'
+  }
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
