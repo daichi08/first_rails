@@ -1,0 +1,37 @@
+<h2>Edit <%= resource_name.to_s.humanize %></h2>
+
+<%= link_to "Project一覧へ","/projects",class: "btn btn-default" %>
+
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put },wrapper: "horizontal_form") do |f| %>
+  <%= devise_error_messages! %>
+
+  <% if f.object.provider.blank? %>
+    <div class="form-group col-xs-12">
+      <%= f.input :username, autofocus: true , input_wrapper_html: { class: "col-xs-7" }%>
+
+      <%= f.input :email, autofocus: true , input_wrapper_html: { class: "col-xs-7" } , hint: "leave blank if you don't want to change it"%>
+
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+      <% end %>
+
+      <% if f.object.encrypted_password.present? %>
+        <%= f.input :password, autocomplete: "off" , input_wrapper_html: { class: "col-xs-7" }%>
+
+        <%= f.input :password_confirmation, autocomplete: "off" , input_wrapper_html: { class: "col-xs-7" }%>
+
+        <%= f.input :current_password, autocomplete: "off" , input_wrapper_html: { class: "col-xs-7" },hint: 'Need your current password to changes.'%>
+      <% end %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Update" ,:class => 'btn btn-primary btn-lg'%>
+    </div>
+  <% end %>
+<% end %>
+
+<h3>Cancel my account</h3>
+
+<h4>Unhappy?</h4> 
+<%= button_to "Cancel my account",registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete , class: 'btn btn-danger btn-lg'%>
+<br>

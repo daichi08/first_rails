@@ -1,0 +1,12 @@
+<h1>Hello,<%= current_user.username %>!</h1>
+<div>
+	<div class="well sidebar-nav col-lg-4 ">
+		<%= render 'pages/mylist' %>
+	</div>
+	<div class="well sidebar-nav col-lg-4">
+		<%= render 'pages/favlist' %>
+	</div>
+	<div class="well sidebar-nav col-lg-4">
+		<%= render 'pages/summary' %>
+	</div>
+</div>

@@ -1,0 +1,9 @@
+
+<%= simple_form_for @project,wrapper: "horizontal_form" do |f| %>
+
+    <%= f.input :title , input_wrapper_html: { class: "col-xs-5" } %> <br>
+    <%= f.hidden_field :user_id, value: current_user.id %><br>
+
+    <%= f.button :submit %> <br>
+
+<% end %>
